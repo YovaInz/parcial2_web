@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="shortcut icon" href="lapiz.png">
+	<script src="examen.js"></script>
+	<title>Examen Teorico</title>
+	<style>
+		html {
+		min-height: 100%;
+		position: relative;
+		}
+		body {
+		margin: 0;
+		margin-bottom: 40px;
+		}
+		footer {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 40px;
+		color: white;
+		}
+	</style>
+</head>
+
+<!-- 3 opción multiple
+	 3 completar oración
+	 3 multiselect
+	 1 libre 			Serán 10 preguntas -->
+
+<body>
+
+	<nav class="navbar navbar-dark bg-dark">
+		<span class="navbar-brand mb-8 h1" style="margin:auto">EXAMEN TEORICO</span>
+	</nav>
+	<br>
+	<form action="examen.php" method="POST">
+<div class="container">
+	<div class="row">
+		<div class="col-6">
+			<input type="text" class="form-control" name="nombre_alumno" minlength="10" maxlength="150" placeholder="Nombre(s) y Apellido(s)" required>
+		</div>
+		<br>
+		<div class="col-3">
+			<select name="grupo" id="grupo" class="custom-select" required>
+				<option value="" disabled selected>Grupo</option>
+				<option value="5AVP">5AVP</option>
+				<option value="5AVO">5AVO</option>
+				<option value="5AVCO">5AVCO</option>
+				<option value="5BVCO">5BVCO</option>
+				<option value="5AVC">5AVC</option>
+			</select><br>
+		</div>
+		<div class="col-3">
+			<input type="date" class="form-control" name="fecha" placeholder="Fecha" min="2021-11-01" required><br>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<label for="pregunta1">1.- ¿Qué significa WWW?</label>
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="pregunta1"  value="a" style="margin-left: 10px;" onclick="p1()" required><label class="form-check-label" for="p1" style="margin-left: 30px;">World While Web</label><br>
+		<input class="form-check-input" type="radio" name="pregunta1"  value="b" style="margin-left: 10px;" onclick="p1()" required><label class="form-check-label" for="p1" style="margin-left: 30px;">Where We Are Web</label><br>
+		<input class="form-check-input" type="radio" name="pregunta1"  value="c" style="margin-left: 10px;" onclick="p1()" required><label class="form-check-label" for="p1" style="margin-left: 30px;">World Wide Web</label>
+	  </div>
+</div>
+<br>
+<div class="container" id="question2" hidden>
+	<label for="pregunta2">2.- ¿Que instrucción de JAVA necesito incluir otra clase y poderla utilizar en mi programa?</label>
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="pregunta2"  value="a" style="margin-left: 10px;" onclick="p2()" required><label class="form-check-label" for="p2" style="margin-left: 30px;">get class</label><br>
+		<input class="form-check-input" type="radio" name="pregunta2"  value="b" style="margin-left: 10px;" onclick="p2()" required><label class="form-check-label" for="p2" style="margin-left: 30px;">include</label><br>
+		<input class="form-check-input" type="radio" name="pregunta2"  value="c" style="margin-left: 10px;" onclick="p2()" required><label class="form-check-label" for="p2" style="margin-left: 30px;">import</label>
+	  </div>
+</div>
+<br>
+<div class="container" id="question3" hidden>
+	<label for="pregunta3">3.- Es lo que invocamos de un objeto, para que se ejecute un bloque de código:</label>
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="pregunta3"  value="a" style="margin-left: 10px;" onclick="p3()" required><label class="form-check-label" for="p3" style="margin-left: 30px;">polimorfismo</label><br>
+		<input class="form-check-input" type="radio" name="pregunta3"  value="b" style="margin-left: 10px;" onclick="p3()" required><label class="form-check-label" for="p3" style="margin-left: 30px;">método</label><br>
+		<input class="form-check-input" type="radio" name="pregunta3"  value="c" style="margin-left: 10px;" onclick="p3()" required><label class="form-check-label" for="p3" style="margin-left: 30px;">clase</label>
+	  </div>
+</div>
+<br>
+<div class="container" id="question4" hidden >
+	<label for="">4.-</label><input style="text-transform: uppercase;" class="form-control-sm" type="text" name="pregunta4" style="margin-left: 10px;" maxlength="50" onchange="p4()" required><label class="form-check-label" for="p4" style="margin-left: 5px;"> es un lenguaje de programación de uso general que se adapta especialmente al desarrollo web.</label><br>
+</div>
+<br>
+<div class="container" id="question5" hidden >
+	<label for="">5.-</label><input style="text-transform:uppercase" class="form-control-sm" type="text" name="pregunta5" style="margin-left: 10px;" maxlength="50" onchange="p5()" required ><label class="form-check-label" for="p5" style="margin-left: 5px;"> siglas en inglés de HyperText Markup Language, hace referencia al lenguaje de marcado para la elaboración de páginas web. </label><br>
+</div>
+<br>
+<div class="container" id="question6" hidden >
+	<label for="">6.- La memoria</label><input style="text-transform: uppercase;" class="form-control-sm" type="text" name="pregunta6" style="margin-left: 10px;" maxlength="50" onchange="p6()" required><label class="form-check-label" for="p6" style="margin-left: 5px;"> es el dispositivo de una máquina donde se almacenan datos o instrucciones que posteriormente se pueden utilizar. </label><br>
+</div>
+<br>
+<div class="container" id="question7" hidden>
+	<label for="pregunta7">7.- Son lenguajes utilizados para desarrollo web de parte del FrontEnd. (seleccionar una o mas respuestas)</label>
+	<div class="checkbox-group required">
+		<input class="form-check-input" type="checkbox" name="pregunta7[]"  value="HTML" style="margin-left: 10px;" onclick="p7()"><label class="form-check-label" for="p7" style="margin-left: 30px;">HTML</label><br>
+		<input class="form-check-input" type="checkbox" name="pregunta7[]"  value="CSS" style="margin-left: 10px;" onclick="p7()"><label class="form-check-label" for="p7" style="margin-left: 30px;">CSS</label><br>
+		<input class="form-check-input" type="checkbox" name="pregunta7[]"  value="Bootstrap" style="margin-left: 10px;" onclick="p7()"><label class="form-check-label" for="p7" style="margin-left: 30px;">Bootstrap</label>
+	  </div>
+</div>
+<br>
+<div class="container" id="question8" hidden>
+	<label for="pregunta8">8.- Son lenguajes utilizados para desarrollo web de parte del BackEnd. (seleccionar una o mas respuestas)</label>
+	<div class="form-check">
+		<input class="form-check-input" type="checkbox" name="pregunta8[]"  value="PHP" style="margin-left: 10px;" onclick="p8()"><label class="form-check-label" for="p8" style="margin-left: 30px;">PHP</label><br>
+		<input class="form-check-input" type="checkbox" name="pregunta8[]"  value="HTML" style="margin-left: 10px;" onclick="p8()"><label class="form-check-label" for="p8" style="margin-left: 30px;">HTML</label><br>
+		<input class="form-check-input" type="checkbox" name="pregunta8[]"  value="JAVA" style="margin-left: 10px;" onclick="p8()"><label class="form-check-label" for="p8" style="margin-left: 30px;">JAVA</label>
+	  </div>
+</div>
+<br>
+<div class="container" id="question9" hidden>
+	<label for="pregunta9">9.- Son lenguajes orientados a objetos. (seleccionar una o mas respuestas)</label>
+	<div class="form-check">
+		<input class="form-check-input" type="checkbox" name="pregunta9[]"  value="PHP" style="margin-left: 10px;" onclick="p9()"><label class="form-check-label" for="p9" style="margin-left: 30px;">PHP</label><br>
+		<input class="form-check-input" type="checkbox" name="pregunta9[]"  value="HTML" style="margin-left: 10px;" onclick="p9()"><label class="form-check-label" for="p9" style="margin-left: 30px;">HTML</label><br>
+		<input class="form-check-input" type="checkbox" name="pregunta9[]"  value="CPP" style="margin-left: 10px;" onclick="p9()"><label class="form-check-label" for="p9" style="margin-left: 30px;">C++</label><br>
+		<input class="form-check-input" type="checkbox" name="pregunta9[]"  value="CSS" style="margin-left: 10px;" onclick="p9()"><label class="form-check-label" for="p9" style="margin-left: 30px;">CSS</label><br>
+		<input class="form-check-input" type="checkbox" name="pregunta9[]"  value="JAVA" style="margin-left: 10px;" onclick="p9()"><label class="form-check-label" for="p9" style="margin-left: 30px;">JAVA</label>
+	  </div>
+</div>
+<br>
+<div class="container" id="question10" hidden>
+	<label for="pregunta10">10.- ¿En que fecha fue creada JavaScript?</label>
+	<input type="date" name="pregunta10" class="form-check-label" onchange="p10()" required>
+</div>
+<div class="container" id="enviar_borrar" hidden>
+	<input type="submit" value="FINALIZAR" class="btn btn-dark">
+</div>
+<br><br>
+</form>
+	<h3 style="text-align: center;">Inzunza Aguilar Cesar Yovanni 5AVP</h3>
+<footer>
+	<div class="container-xl">
+		<div class="progress">
+			<div class="progress-bar progress-bar-striped progress-bar-animated bg-dark" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" name="preguntarogreso" id="progreso" style="width: 0%"></div>
+		</div>
+	</div>
+</footer>
+
+
+
+
+
+
+
+<!-- 	debe de imprimir
+
+	resultados:
+
+	nombre del alumno
+
+	(ejemplo)
+	1.- Correcta :) -> América
+	2.- Incorrecta :( -> PHP
+	3.- Correcta :) -> Orientado a Web, Orientado a Objetos
+
+	Calificación: 8/10 felicidades:) -->
+
+
+</body>
+</html>
